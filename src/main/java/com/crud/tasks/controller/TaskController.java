@@ -10,21 +10,21 @@ import java.util.List;
 @RequestMapping("/v1/task")
 public class TaskController {
 
-    @GetMapping("getTasks")
+    @GetMapping(value = "getTasks")
     public List<TaskDto> getTasks() {
         return new ArrayList<>();
     }
 
-    @GetMapping("getTask")
+    @GetMapping(value = "getTask")
     public TaskDto getTask(Long taskId) {
         return new TaskDto(1L, "task title", "task content");
     }
 
-    @PostMapping( "createTask")
+    @PostMapping(value = "createTask")
     public void createTask(TaskDto task) {
     }
 
-    @PutMapping("updateTask")
+    @PutMapping(value = "updateTask")
     public TaskDto updateTask(TaskDto task) {
         return new TaskDto(1L, "edited task title", "edited task content");
     }
