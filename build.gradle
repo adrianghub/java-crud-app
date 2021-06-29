@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.5.0'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
-	id 'war'
+//	id 'war'
 }
 
 group = 'com.crud'
@@ -25,9 +25,10 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok:1.18.20'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 
-	implementation group: 'mysql', name: 'mysql-connector-java'
+//	implementation group: 'mysql', name: 'mysql-connector-java'
+	runtimeOnly 'org.postgresql:postgresql'
 
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+//	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
 
 test {
