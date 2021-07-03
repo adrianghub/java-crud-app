@@ -25,8 +25,8 @@ dependencies {
 	testCompileOnly 'org.projectlombok:lombok:1.18.20'
 	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 
-//	implementation group: 'mysql', name: 'mysql-connector-java'
-	implementation group: 'org.postgresql', name: 'postgresql'
+	implementation group: 'mysql', name: 'mysql-connector-java'
+//	implementation group: 'org.postgresql', name: 'postgresql'
 
 //	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 }
