@@ -39,20 +39,17 @@ public class TrelloClient {
     public List<TrelloBoardDto> getTrelloBoards() {
 
         try {
-
             TrelloBoardDto[] boardResponse = restTemplate.getForObject(getTrelloUrl(), TrelloBoardDto[].class);
-
             return Optional.ofNullable(boardResponse)
                     .map(Arrays::asList)
                     .orElse(Collections.emptyList())
                     .stream()
                     .filter(p -> Objects.nonNull(p.getId()) && Objects.nonNull(p.getName()))
                     .collect(Collectors.toList());
-        } catch (RestClientException e){
+        } catch (RestClientException e) {
             LOGGER.error(e.getMessage(), e);
             return Collections.emptyList();
         }
-
     }
 
     public CreatedTrelloCard createNewCard(TrelloCardDto trelloCardDto) {
