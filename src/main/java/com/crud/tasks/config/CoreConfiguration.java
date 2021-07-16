@@ -24,7 +24,7 @@ public class CoreConfiguration {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.crud.tasks.trello"))
+                .apis(RequestHandlerSelectors.basePackage("com.crud.tasks"))
                 .paths(PathSelectors.any())
                 .build();
     }
