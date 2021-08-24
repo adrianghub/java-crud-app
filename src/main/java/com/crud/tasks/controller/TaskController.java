@@ -28,7 +28,7 @@ public class TaskController {
 
     @GetMapping(path = "getTask/{id}")
     public TaskDto getTask(@PathVariable("id") Long taskId) throws TaskNotFoundException {
-        Task task = service.getTaskById(taskId).orElseThrow(TaskNotFoundException::new);
+        Task task = service.getTaskById(taskId).orElseThrow(() -> new TaskNotFoundException("Task with id " + taskId + " not found."));
 
         return taskMapper.mapToTaskDto(task);
     }
@@ -39,16 +39,16 @@ public class TaskController {
         service.saveTask(task);
     }
 
-    @PutMapping(path = "updateTask")
-    public TaskDto updateTask(@RequestBody TaskDto taskDto) {
-        Task task = taskMapper.mapToTask(taskDto);
+    @PutMapping(path = "updateTask/{id}")
+    public TaskDto updateTask(@PathVariable("id") Long taskId) {
+        Task task = service.getTaskById(taskId).orElseThrow(() -> new TaskNotFoundException("Task with id " + taskId + " not found."));
         Task savedTask = service.saveTask(task);
         return taskMapper.mapToTaskDto(savedTask);
     }
 
     @DeleteMapping(path = "deleteTask/{id}")
     public void deleteTask(@PathVariable("id") Long taskId) throws TaskNotFoundException {
-        Task task = service.getTaskById(taskId).orElseThrow(TaskNotFoundException::new);
+        Task task = service.getTaskById(taskId).orElseThrow(() -> new TaskNotFoundException("Task with id " + taskId + " not found."));
         service.deleteTask(task);
     }
 }

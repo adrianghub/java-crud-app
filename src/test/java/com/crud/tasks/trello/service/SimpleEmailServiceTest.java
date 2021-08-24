@@ -1,4 +1,4 @@
-package com.crud.tasks.service;
+package com.crud.tasks.trello.service;
 
 import com.crud.tasks.domain.Mail;
 import org.junit.jupiter.api.Test;
@@ -62,7 +62,7 @@ class SimpleEmailServiceTest {
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
-        mailMessage.setCc(mail.getToCc());
+        mailMessage.setCc("");
 
         //When
         simpleEmailService.send(mail);

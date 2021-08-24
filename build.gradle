@@ -1,7 +1,7 @@
 plugins {
-	id 'org.springframework.boot' version '2.5.0'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-	id 'java'
+    id 'org.springframework.boot' version '2.5.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
 //	id 'war'
 }
 
@@ -10,30 +10,32 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
-	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-mail'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
-	compileOnly 'org.projectlombok:lombok:1.18.20'
-	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
 
-	testCompileOnly 'org.projectlombok:lombok:1.18.20'
-	testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 
-	implementation group: 'mysql', name: 'mysql-connector-java'
+    implementation group: 'mysql', name: 'mysql-connector-java'
 //	implementation group: 'org.postgresql', name: 'postgresql'
 
 //	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	implementation('io.springfox:springfox-swagger2:2.9.2')
-	implementation('io.springfox:springfox-swagger-ui:2.9.2')
+    implementation('io.springfox:springfox-swagger2:2.9.2')
+    implementation('io.springfox:springfox-swagger-ui:2.9.2')
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.7'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.5.4'
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
