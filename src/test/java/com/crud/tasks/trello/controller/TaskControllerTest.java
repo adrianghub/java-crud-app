@@ -1,5 +1,6 @@
-package com.crud.tasks.controller;
+package com.crud.tasks.trello.controller;
 
+import com.crud.tasks.controller.TaskController;
 import com.crud.tasks.domain.Task;
 import com.crud.tasks.domain.TaskDto;
 import com.crud.tasks.mapper.TaskMapper;
